@@ -1,0 +1,587 @@
+/* Global styles */
+div:has(img) {
+  position: relative;
+}
+
+img::before {
+    content: " ";
+    background-color: #eee;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+}
+
+img::after {
+    content: attr(alt);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 1px;
+    left: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+img[alt] {
+    text-align: center;
+    font-weight: bold;
+    color: #999;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 2px solid blue;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+header {
+  background-color: #1e212b;
+}
+
+.header-inner-container {
+  display: flex;
+  flex-direction: column;
+}
+
+header a {
+  color: #ffffff;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+header a.active {
+  background-color: #1e15bd;
+}
+
+header .site-logo-container {
+  order: -1;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+header nav li {
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+}
+
+header nav:nth-of-type(2) ul li a {
+  color: gray;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+header nav li a:hover {
+  background-color: #1e15bd;
+}
+
+aside {
+  /* For now, we'll show it on larger viewports. */
+  display: none;
+}
+
+main section {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+main section div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+main section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Blog Post Page */
+.blog-post-page-container h1 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.first-column {
+  border-bottom: 1px solid #ccc;
+}
+
+.first-column .blog-container {
+  /* margin-top: 30px; */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.first-column .blog-metadata {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 20px;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+
+.first-column .blog-metadata .author-image {
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+}
+
+.first-column .blog-metadata .author-info ul li {
+  font-size: 1.1em;
+  line-height: 2;
+}
+
+.first-column .blog-article-writeup {
+  margin-top: 20px;
+}
+
+.first-column .blog-article-writeup p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  line-height: 1.618;
+}
+
+.second-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.second-column .second-column-top {
+  padding: 20px;
+}
+
+.second-column .second-column-top-list {
+  margin-top: 20px;
+}
+
+.second-column .second-column-top-list ul {
+  counter-reset: my-counter;
+}
+
+.second-column .second-column-top-list ul li {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.second-column .second-column-top-list ul li::before {
+  counter-increment: my-counter;
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  outline: 1px solid #000000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 26px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.second-column .second-column-top-list ul li a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.second-column .second-column-bottom {
+  padding: 20px;
+}
+
+.second-column .form-row input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Photo Gallery page */
+main.gallery-page {
+  margin-bottom: 20px;
+}
+
+main.gallery-page img {
+  display: block;
+  height: 100%;
+}
+
+.stand-out-images {
+  padding: 20px;
+}
+
+.stand-out-images [class^="image-"] {
+  margin-bottom: 5px;
+}
+
+/*
+The class name ".f" has no special meaning.
+I just don't have an idea what to call it.
+If you come up with a better name, kindly update it
+here in the CSS and in the "photo-gallery.html" file
+on line 52.
+
+October 6, 2024. 21:38 GMT+1
+ */
+.bottom-page-gallery .f {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.bottom-page-gallery .f .col-1 img {
+  margin-bottom: 5px;
+}
+
+.bottom-page-gallery .f .col-2 .col-2-img-1 {
+  margin-bottom: 5px;
+}
+
+.bottom-page-gallery .col-3 {
+  margin-bottom: 5px;
+}
+
+.bottom-page-gallery .col-4,
+.bottom-page-gallery .col-4-row-1 {
+  margin-bottom: 5px;
+}
+
+.bottom-page-gallery .col-4 .col-4-row-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.bottom-page-gallery .col-5 {
+  display: none;
+}
+
+/* Form Page */
+.form-page-container {
+  margin: 1em;
+}
+
+.form-container {
+  padding: 20px;
+  max-width: 500px;
+  border: 2px solid #1e212b;
+  margin: 3em auto;
+  position: relative;
+}
+
+.form-container .form-custom-header {
+  border: 2px solid #1a1a1a;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #1e212b;
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+}
+
+.form-container .form-row input,
+.form-container .form-row textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Global form design */
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: 2px solid blue;
+}
+
+.form-row input[type="submit"] {
+  background-color: #1e212b;
+  color: #ffffff;
+  border: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+footer {
+  background-color: #1e212b;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+footer * {
+  color: #ffffff;
+}
+
+footer div {
+  padding: 15px;
+}
+
+footer div:nth-child(2) {
+  order: 1;
+}
+
+footer div:nth-child(3) ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer div:nth-child(3) ul li {
+  font-size: 20px;
+}
+
+@media (min-width: 500px) {
+  /* Experimental */
+  .header-inner-container {
+    display: grid;
+    grid-template-areas:
+      "h1 h1"
+      "h2 h2";
+  }
+
+  .site-logo-container {
+    grid-column: 1/3;
+  }
+}
+
+@media (min-width: 600px) {
+  .blog-container {
+    width: 70%;
+  }
+
+  .stand-out-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .stand-out-images img {
+    position: relative;
+  }
+
+  .stand-out-images img:hover {
+    z-index: 2;
+  }
+
+  .stand-out-images [class^="image-"]:last-child {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bottom-page-gallery {
+    display: flex;
+  }
+
+  .bottom-page-gallery img {
+    object-fit: cover;
+  }
+
+  .bottom-page-gallery .col-5 {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .bottom-page-gallery .f .col-2 {
+    display: grid;
+    margin-right: 5px;
+  }
+
+  .bottom-page-gallery .col-3,
+  .bottom-page-gallery .col-4 {
+    margin-right: 5px;
+  }
+}
+
+@media (min-width: 740px) {
+  section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  section div {
+    width: 50%;
+  }
+
+  section.section-b div:nth-child(2) {
+    order: -1;
+  }
+}
+
+@media (min-width: 780px) {
+  header {
+    padding: 20px;
+  }
+
+  .header-inner-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: baseline;
+  }
+
+  .site-logo-container {
+    grid-column: initial;
+  }
+
+  header nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header nav li {
+    border-bottom: none;
+  }
+
+  .header-inner-container nav ul li,
+  .header-inner-container nav ul li a {
+    display: inline;
+  }
+
+  header .site-logo-container {
+    order: 0;
+  }
+
+  aside {
+    display: block;
+    background-image: url("../img/hero.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  footer div:nth-child(2) {
+    order: 0;
+  }
+
+  footer div:nth-child(3) ul li + li {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .blog-post-page-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .second-column {
+    display: block;
+  }
+
+  .second-column-top {
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .blog-container {
+    width: 90%;
+  }
+
+  /*
+  The following is subject to removal.
+  October 3, 2024 15:08 GMT+1
+  */
+  .second-column .second-column-top,
+  .second-column .second-column-bottom {
+    padding: 0 0 10px 0;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  aside {
+    background-position: center -100px;
+  }
+
+  main.blog-post-page-container,
+  main.index-page-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .first-column .blog-container {
+    margin: 0;
+  }
+}

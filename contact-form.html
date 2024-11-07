@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blog - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner-container">
+        <nav>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+            <li><a class="active" href="contact-form.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="site-logo-container">
+          <h1><a href="index.html">Travel Blog</a></h1>
+        </div>
+        <nav>
+          <!--
+          Here, I am repeating the blog, gallery and contact links.
+          You can replace them with your chosen links.
+          -->
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+            <li><a href="contact-form.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="form-page-container">
+      <div class="form-container">
+        <div class="form-custom-header">
+          <p>Get in Touch</p>
+        </div>
+        <form style="margin-top: 1em">
+          <div class="form-row">
+            <label for="sender-name" class="visually-hidden">Name</label>
+            <input
+              id="sender-name"
+              type="text"
+              required
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="form-row">
+            <label for="email" class="visually-hidden">Email</label>
+            <input
+              id="email"
+              type="email"
+              required
+              placeholder="Your Email Address"
+            />
+          </div>
+          <div class="form-row">
+            <label for="message" class="visually-hidden">Your Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+          <div class="form-row">
+            <input type="submit" value="Send Message" />
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <a href="#">Site Logo</a>
+      </div>
+      <div>
+        <p>&copy;2024</p>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
